@@ -17,6 +17,10 @@ service UserService {
     rpc Login (GrpcReq) returns (GrpcResp) {
     }
 
+    //登出
+    rpc Logout (GrpcReq) returns (GrpcResp) {
+    }
+
     //更新用户信息，目前不包含头像,更新头像的接口另外定义
     rpc UpdateUserInfo (GrpcReq) returns (GrpcResp) {
 
@@ -57,6 +61,14 @@ message LoginReq {
 message LoginResp {
     string token = 1;
     UserProfile profile = 2;
+}
+
+message LogoutReq {
+    bool isMandatoryLogout = 1;//是否强制登出，强制登出会把其他同时在线的客户端也登出
+}
+
+message LogoutResp {
+
 }
 
 message ResetPasswordReq {
