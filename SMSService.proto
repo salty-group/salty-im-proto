@@ -17,7 +17,7 @@ service SMSService {
     }
 }
 
-enum OperationType {
+enum SMSOperationType {
     UNDEFINED = 0; //未定义，默认值
     REGISTER = 1; //注册
     LOGIN = 2; //登录
@@ -25,7 +25,7 @@ enum OperationType {
 }
 
 message ObtainTelephoneSMSCodeReq {
-    OperationType operationType = 1;
+    SMSOperationType operationType = 1;
     string telephone = 2;
 }
 
@@ -34,7 +34,7 @@ message ObtainTelephoneSMSCodeResp {
 }
 
 message VerifyTelephoneSMSCodeReq {
-    OperationType operationType = 1;
+    SMSOperationType operationType = 1;
     string telephone = 2;
     string smsCode = 3;
 }

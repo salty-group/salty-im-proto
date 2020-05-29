@@ -75,6 +75,7 @@ message LogoutResp {
 
 message ResetPasswordReq {
     string newPassword = 1;
+    string oldPassword = 2;
     oneof targetAccount {
         string telephone = 4;
         string email = 5;
