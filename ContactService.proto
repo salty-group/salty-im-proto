@@ -32,6 +32,10 @@ service ContactService {
     //更新好友备注信息
     rpc UpdateRemarkInfo (GrpcReq) returns (GrpcResp) {
     }
+
+    //获取联系人列表
+    rpc GetContacts (GrpcReq) returns (GrpcResp) {
+    }
 }
 
 message RequestContactReq {
@@ -75,4 +79,12 @@ message UpdateRemarkInfoReq {
 
 message UpdateRemarkInfoResp {
 
+}
+
+message GetContactsReq {
+
+}
+
+message GetContactsResp {
+    repeated ContactProfile contacts = 1;
 }
