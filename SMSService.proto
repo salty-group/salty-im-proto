@@ -9,21 +9,36 @@ option java_multiple_files = true;
 
 service SMSService {
     //获取验证码
-    rpc ObtainSMSCode (GrpcReq) returns (GrpcResp) {
+    rpc ObtainTelephoneSMSCode (GrpcReq) returns (GrpcResp) {
+    }
+
+    //校验验证码
+    rpc VerifyTelephoneSMSCode (GrpcReq) returns (GrpcResp) {
     }
 }
 
-//sms服务就是短信服务，邮件相关的接口要独立出来
-message ObtainSMSCodeReq {
-    CodeType codeType = 1;
+enum OperationType {
+    UNDEFINED = 0; //未定义，默认值
+    REGISTER = 1; //注册
+    LOGIN = 2; //登录
+    RESET_PASSWORD = 3; //重置密码
+}
+
+message ObtainTelephoneSMSCodeReq {
+    OperationType operationType = 1;
     string telephone = 2;
-    enum CodeType {
-        REGISTER = 0;
-        LOGIN = 1;
-        RESET_PASSWORD = 2;
-    }
 }
 
-message ObtainSMSCodeResp {
+message ObtainTelephoneSMSCodeResp {
+    int32 smsCodeLength = 1; //验证码的长度
+}
+
+message VerifyTelephoneSMSCodeReq {
+    OperationType operationType = 1;
+    string telephone = 2;
+    string smsCode = 3;
+}
+
+message VerifyTelephoneSMSCodeResp {
 
 }

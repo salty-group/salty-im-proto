@@ -45,7 +45,6 @@ service UserService {
 
 message RegisterReq {
     string password = 1;
-    string verificationCode = 2;
     UserProfile profile = 3;
 }
 
@@ -55,7 +54,6 @@ message RegisterResp {
 
 message LoginReq {
     string password = 1;
-    string verificationCode = 2;
     oneof targetAccount {
         string telephone = 3;
         string email = 4;
@@ -68,7 +66,7 @@ message LoginResp {
 }
 
 message LogoutReq {
-    bool isMandatoryLogout = 1;//是否强制登出，强制登出会把其他同时在线的客户端也登出
+    bool isMandatoryLogout = 1; //是否强制登出，强制登出会把其他同时在线的客户端也登出
 }
 
 message LogoutResp {
@@ -77,10 +75,6 @@ message LogoutResp {
 
 message ResetPasswordReq {
     string newPassword = 1;
-    oneof resetCertificate {//重置凭据，要么用旧密码，要么用验证码
-                            string oldPassword = 2;
-                            string verificationCode = 3;
-    }
     oneof targetAccount {
         string telephone = 4;
         string email = 5;
