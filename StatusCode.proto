@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package com.salty.protos;
+
+option java_multiple_files = true;
+
+// [1,15]之内的标识号在编码的时候会占用一个字节。
+// [16,2047]之内的标识号则占用2个字节。所以应该为那些频繁出现的消息元素保留 [1,15]之内的标识号。
+// 要为将来有可能添加的、频繁出现的标识号预留一些标识号
+
+enum StatusCode {
+    STATUS_UNKNOWN = 0;
+    STATUS_OK = 1; // 请求通过
+    STATUS_BAD_REQUEST = 2; // 错误请求
+    STATUS_INTERNAL_SERVER_ERROR = 3; // 服务器错误
+    STATUS_NON_AUTHORITATIVE_INFO = 4; // 请求缺少验证信息
+    STATUS_UNAUTHORIZED = 5; // 请求验证未通过
+    STATUS_REPEAT_OPERATION = 6; // 重复请求、重复操作
+
+    STATUS_ACCOUNT_AUTHORIZED_REQUIRED = 16; // 账户需要安全验证
+    STATUS_ACCOUNT_EXISTS = 17; // 账户已存在
+
+    STATUS_NOT_FOUND = 30; // TODO
+
+    STATUS_REQUEST_TIMEOUT = 50; // 客户端请求超时
+    STATUS_REQUEST_FORBIDDEN = 51; // 客户端请求被拒绝
+    STATUS_SERVICE_UNAVAILABLE = 52; // 服务器不可用
+    STATUS_BAD_GATEWAY = 53; // 服务器网关错误
+    STATUS_GATEWAY_TIMEOUT = 54; // 服务器网关超时
+}
