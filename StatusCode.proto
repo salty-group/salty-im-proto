@@ -19,6 +19,7 @@ enum StatusCode {
 
     STATUS_ACCOUNT_AUTHORIZED_REQUIRED = 16; // 账户需要安全验证
     STATUS_ACCOUNT_EXISTS = 17; // 账户已存在
+    STATUS_ACCOUNT_NOT_EXISTS = 18;
 
     STATUS_NOT_FOUND = 30; // TODO
 
