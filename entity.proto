@@ -59,6 +59,7 @@ message UserProfile {
 message ContactProfile {
     UserProfile userProfile = 1;
     ContactRemark remarkInfo = 2;
+    string sortKey = 3;
 }
 
 message ContactRemark {
