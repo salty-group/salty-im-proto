@@ -93,10 +93,10 @@ message GetContactsResp {
     repeated ContactProfile contacts = 1;
 }
 
-message GetHistoryContactOperationMessageReq {
+message GetContactOperationMessageListReq {
     int64 maxMessageTime = 1;//消息的最大时间，客户端返回改时间之前的所有消息
 }
 
-message GetHistoryContactOperationMessageResp {
+message GetContactOperationMessageListResp {
     repeated ContactOperationMessage messageList = 1;
 }
