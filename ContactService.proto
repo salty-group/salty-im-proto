@@ -29,6 +29,10 @@ service ContactService {
     rpc DeleteContact (GrpcReq) returns (GrpcResp) {
     }
 
+    //获取执行时间内的联系操作列表
+    rpc GetContactOperationMessageList (GrpcReq) returns (GrpcResp) {
+    }
+
     //更新好友备注信息
     rpc UpdateRemarkInfo (GrpcReq) returns (GrpcResp) {
     }
@@ -87,4 +91,12 @@ message GetContactsReq {
 
 message GetContactsResp {
     repeated ContactProfile contacts = 1;
+}
+
+message GetHistoryContactOperationMessageReq {
+    int64 maxMessageTime = 1;//消息的最大时间，客户端返回改时间之前的所有消息
+}
+
+message GetHistoryContactOperationMessageResp {
+    repeated ContactOperationMessage messageList = 1;
 }

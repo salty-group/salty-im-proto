@@ -155,7 +155,7 @@ message MessageCommon {
     string sortID = 4; //排序ID，用来排序，递增或者递减，消息的顺序基于它
 }
 
-message ContactPushMessage {
+message ContactOperationMessage {
     MessageCommon common = 1;//公共消息
     UserProfile triggerProfile = 2;//触发这个消息的用户profile
     string addReason = 3; //添加好友的理由
