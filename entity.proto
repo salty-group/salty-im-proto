@@ -117,16 +117,19 @@ message Conversation {
     }
 }
 
-message Message {
+message MessageCommon {
     string messageID = 1; //消息ID
-    string sortID = 2; //排序ID，用来排序，递增或者递减，消息的顺序基于它
-    string senderUserId = 3; //发送者ID
-    string targetId = 4; //消息的接收者ID，可能是userId也可能是GroupId
-    int64 sendTime = 5; //发送时间，服务器收到并入库的时间，不是客户端的时间
-    int64 receivedTime = 6; //接受消息，服务器把消息推送给客户端的时间
-    int64 readTime = 7; //阅读时间，就是消息没查看的时间，会有一个set消息为已读状态的接口
-    SentStatus sentStatus = 8;
-    ReceivedStatus receivedStatus = 9;
+    int64 createdTime = 2; //push消息创建的时间
+    bool isNeedRemind = 3; //是否需要提醒用户，true的时候，收到消息会有通知栏推送
+    string sortID = 4; //排序ID，用来排序，递增或者递减，消息的顺序基于它
+}
+
+message ChatMessage {
+    MessageCommon common = 1;
+    string targetId = 2; //消息的接收者ID，可能是userId也可能是GroupId
+    int64 readTime = 3; //阅读时间，就是消息没查看的时间，会有一个set消息为已读状态的接口
+    SentStatus sentStatus = 4;
+    ReceivedStatus receivedStatus = 5;
 
     //会话提醒状态
     enum SentStatus {
@@ -146,13 +149,6 @@ message Message {
         SEND = 0; //发送
         RECEIVE = 1; //接收
     }
-}
-
-message MessageCommon {
-    string messageID = 1; //消息ID
-    int64 createdTime = 2; //push消息创建的时间
-    bool isNeedRemind = 3; //是否需要提醒用户，true的时候，收到消息会有通知栏推送
-    string sortID = 4; //排序ID，用来排序，递增或者递减，消息的顺序基于它
 }
 
 message ContactOperationMessage {
