@@ -118,10 +118,10 @@ message Conversation {
 }
 
 message MessageCommon {
-    string messageID = 1; //消息ID
+    string messageId = 1; //消息ID
     int64 createdTime = 2; //push消息创建的时间
     bool isNeedRemind = 3; //是否需要提醒用户，true的时候，收到消息会有通知栏推送
-    string sortID = 4; //排序ID，用来排序，递增或者递减，消息的顺序基于它
+    string sortId = 4; //排序ID，用来排序，递增或者递减，消息的顺序基于它
 }
 
 message ChatMessage {
