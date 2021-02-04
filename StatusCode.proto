@@ -16,6 +16,7 @@ enum StatusCode {
     STATUS_NON_AUTHORITATIVE_INFO = 4; // 请求缺少验证信息
     STATUS_UNAUTHORIZED = 5; // 请求验证未通过
     STATUS_REPEAT_OPERATION = 6; // 重复请求、重复操作
+    STATUS_TOKEN_EXPIRED = 7; // TOKEN 过期
 
     STATUS_ACCOUNT_AUTHORIZED_REQUIRED = 16; // 账户需要安全验证
     STATUS_ACCOUNT_EXISTS = 17; // 账户已存在
