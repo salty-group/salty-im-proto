@@ -1,2 +1,2 @@
 # golang proto
-*.pb.go
+#*.pb.go
