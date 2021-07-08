@@ -30,7 +30,7 @@ service ContactService {
     }
 
     //获取执行时间内的联系操作列表
-    rpc GetContactOperationMessageList (GrpcReq) returns (GrpcResp) {
+    rpc GetContactOperationList (GrpcReq) returns (GrpcResp) {
     }
 
     //更新好友备注信息
@@ -38,7 +38,7 @@ service ContactService {
     }
 
     //获取联系人列表
-    rpc GetContacts (GrpcReq) returns (GrpcResp) {
+    rpc GetContactList (GrpcReq) returns (GrpcResp) {
     }
 }
 
@@ -85,18 +85,20 @@ message UpdateRemarkInfoResp {
 
 }
 
-message GetContactsReq {
+message GetContactListReq {
 
 }
 
-message GetContactsResp {
+message GetContactListResp {
     repeated ContactProfile contacts = 1;
 }
 
-message GetContactOperationMessageListReq {
-    int64 maxMessageTime = 1;//消息的最大时间，客户端返回改时间之前的所有消息
+// 查询时间范围内的所有消息
+message GetContactOperationListReq {
+    int64 startDateTime = 1;
+    int64 endDateTime = 2;
 }
 
-message GetContactOperationMessageListResp {
+message GetContactOperationListResp {
     repeated ContactOperationMessage messageList = 1;
 }

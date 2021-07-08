@@ -398,148 +398,157 @@ func (m *UpdateRemarkInfoResp) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_UpdateRemarkInfoResp proto.InternalMessageInfo
 
-type GetContactsReq struct {
+type GetContactListReq struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *GetContactsReq) Reset()         { *m = GetContactsReq{} }
-func (m *GetContactsReq) String() string { return proto.CompactTextString(m) }
-func (*GetContactsReq) ProtoMessage()    {}
-func (*GetContactsReq) Descriptor() ([]byte, []int) {
+func (m *GetContactListReq) Reset()         { *m = GetContactListReq{} }
+func (m *GetContactListReq) String() string { return proto.CompactTextString(m) }
+func (*GetContactListReq) ProtoMessage()    {}
+func (*GetContactListReq) Descriptor() ([]byte, []int) {
 	return fileDescriptor_2aa1a4d6536f54ce, []int{10}
 }
 
-func (m *GetContactsReq) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_GetContactsReq.Unmarshal(m, b)
+func (m *GetContactListReq) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetContactListReq.Unmarshal(m, b)
 }
-func (m *GetContactsReq) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_GetContactsReq.Marshal(b, m, deterministic)
+func (m *GetContactListReq) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetContactListReq.Marshal(b, m, deterministic)
 }
-func (m *GetContactsReq) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetContactsReq.Merge(m, src)
+func (m *GetContactListReq) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetContactListReq.Merge(m, src)
 }
-func (m *GetContactsReq) XXX_Size() int {
-	return xxx_messageInfo_GetContactsReq.Size(m)
+func (m *GetContactListReq) XXX_Size() int {
+	return xxx_messageInfo_GetContactListReq.Size(m)
 }
-func (m *GetContactsReq) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetContactsReq.DiscardUnknown(m)
+func (m *GetContactListReq) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetContactListReq.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_GetContactsReq proto.InternalMessageInfo
+var xxx_messageInfo_GetContactListReq proto.InternalMessageInfo
 
-type GetContactsResp struct {
+type GetContactListResp struct {
 	Contacts             []*ContactProfile `protobuf:"bytes,1,rep,name=contacts,proto3" json:"contacts,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
 	XXX_unrecognized     []byte            `json:"-"`
 	XXX_sizecache        int32             `json:"-"`
 }
 
-func (m *GetContactsResp) Reset()         { *m = GetContactsResp{} }
-func (m *GetContactsResp) String() string { return proto.CompactTextString(m) }
-func (*GetContactsResp) ProtoMessage()    {}
-func (*GetContactsResp) Descriptor() ([]byte, []int) {
+func (m *GetContactListResp) Reset()         { *m = GetContactListResp{} }
+func (m *GetContactListResp) String() string { return proto.CompactTextString(m) }
+func (*GetContactListResp) ProtoMessage()    {}
+func (*GetContactListResp) Descriptor() ([]byte, []int) {
 	return fileDescriptor_2aa1a4d6536f54ce, []int{11}
 }
 
-func (m *GetContactsResp) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_GetContactsResp.Unmarshal(m, b)
+func (m *GetContactListResp) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetContactListResp.Unmarshal(m, b)
 }
-func (m *GetContactsResp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_GetContactsResp.Marshal(b, m, deterministic)
+func (m *GetContactListResp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetContactListResp.Marshal(b, m, deterministic)
 }
-func (m *GetContactsResp) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetContactsResp.Merge(m, src)
+func (m *GetContactListResp) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetContactListResp.Merge(m, src)
 }
-func (m *GetContactsResp) XXX_Size() int {
-	return xxx_messageInfo_GetContactsResp.Size(m)
+func (m *GetContactListResp) XXX_Size() int {
+	return xxx_messageInfo_GetContactListResp.Size(m)
 }
-func (m *GetContactsResp) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetContactsResp.DiscardUnknown(m)
+func (m *GetContactListResp) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetContactListResp.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_GetContactsResp proto.InternalMessageInfo
+var xxx_messageInfo_GetContactListResp proto.InternalMessageInfo
 
-func (m *GetContactsResp) GetContacts() []*ContactProfile {
+func (m *GetContactListResp) GetContactList() []*ContactProfile {
 	if m != nil {
 		return m.Contacts
 	}
 	return nil
 }
 
-type GetContactOperationMessageListReq struct {
-	MaxMessageTime       int64    `protobuf:"varint,1,opt,name=maxMessageTime,proto3" json:"maxMessageTime,omitempty"`
+// 查询时间范围内的所有消息
+type GetContactOperationListReq struct {
+	StartDateTime        int64    `protobuf:"varint,1,opt,name=startDateTime,proto3" json:"startDateTime,omitempty"`
+	EndDateTime          int64    `protobuf:"varint,2,opt,name=endDateTime,proto3" json:"endDateTime,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *GetContactOperationMessageListReq) Reset()         { *m = GetContactOperationMessageListReq{} }
-func (m *GetContactOperationMessageListReq) String() string { return proto.CompactTextString(m) }
-func (*GetContactOperationMessageListReq) ProtoMessage()    {}
-func (*GetContactOperationMessageListReq) Descriptor() ([]byte, []int) {
+func (m *GetContactOperationListReq) Reset()         { *m = GetContactOperationListReq{} }
+func (m *GetContactOperationListReq) String() string { return proto.CompactTextString(m) }
+func (*GetContactOperationListReq) ProtoMessage()    {}
+func (*GetContactOperationListReq) Descriptor() ([]byte, []int) {
 	return fileDescriptor_2aa1a4d6536f54ce, []int{12}
 }
 
-func (m *GetContactOperationMessageListReq) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_GetContactOperationMessageListReq.Unmarshal(m, b)
+func (m *GetContactOperationListReq) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetContactOperationListReq.Unmarshal(m, b)
 }
-func (m *GetContactOperationMessageListReq) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_GetContactOperationMessageListReq.Marshal(b, m, deterministic)
+func (m *GetContactOperationListReq) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetContactOperationListReq.Marshal(b, m, deterministic)
 }
-func (m *GetContactOperationMessageListReq) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetContactOperationMessageListReq.Merge(m, src)
+func (m *GetContactOperationListReq) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetContactOperationListReq.Merge(m, src)
 }
-func (m *GetContactOperationMessageListReq) XXX_Size() int {
-	return xxx_messageInfo_GetContactOperationMessageListReq.Size(m)
+func (m *GetContactOperationListReq) XXX_Size() int {
+	return xxx_messageInfo_GetContactOperationListReq.Size(m)
 }
-func (m *GetContactOperationMessageListReq) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetContactOperationMessageListReq.DiscardUnknown(m)
+func (m *GetContactOperationListReq) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetContactOperationListReq.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_GetContactOperationMessageListReq proto.InternalMessageInfo
+var xxx_messageInfo_GetContactOperationListReq proto.InternalMessageInfo
 
-func (m *GetContactOperationMessageListReq) GetMaxMessageTime() int64 {
+func (m *GetContactOperationListReq) GetStartDateTime() int64 {
 	if m != nil {
-		return m.MaxMessageTime
+		return m.StartDateTime
 	}
 	return 0
 }
 
-type GetContactOperationMessageListResp struct {
+func (m *GetContactOperationListReq) GetEndDateTime() int64 {
+	if m != nil {
+		return m.EndDateTime
+	}
+	return 0
+}
+
+type GetContactOperationListResp struct {
 	MessageList          []*ContactOperationMessage `protobuf:"bytes,1,rep,name=messageList,proto3" json:"messageList,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                   `json:"-"`
 	XXX_unrecognized     []byte                     `json:"-"`
 	XXX_sizecache        int32                      `json:"-"`
 }
 
-func (m *GetContactOperationMessageListResp) Reset()         { *m = GetContactOperationMessageListResp{} }
-func (m *GetContactOperationMessageListResp) String() string { return proto.CompactTextString(m) }
-func (*GetContactOperationMessageListResp) ProtoMessage()    {}
-func (*GetContactOperationMessageListResp) Descriptor() ([]byte, []int) {
+func (m *GetContactOperationListResp) Reset()         { *m = GetContactOperationListResp{} }
+func (m *GetContactOperationListResp) String() string { return proto.CompactTextString(m) }
+func (*GetContactOperationListResp) ProtoMessage()    {}
+func (*GetContactOperationListResp) Descriptor() ([]byte, []int) {
 	return fileDescriptor_2aa1a4d6536f54ce, []int{13}
 }
 
-func (m *GetContactOperationMessageListResp) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_GetContactOperationMessageListResp.Unmarshal(m, b)
+func (m *GetContactOperationListResp) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetContactOperationListResp.Unmarshal(m, b)
 }
-func (m *GetContactOperationMessageListResp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_GetContactOperationMessageListResp.Marshal(b, m, deterministic)
+func (m *GetContactOperationListResp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetContactOperationListResp.Marshal(b, m, deterministic)
 }
-func (m *GetContactOperationMessageListResp) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetContactOperationMessageListResp.Merge(m, src)
+func (m *GetContactOperationListResp) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetContactOperationListResp.Merge(m, src)
 }
-func (m *GetContactOperationMessageListResp) XXX_Size() int {
-	return xxx_messageInfo_GetContactOperationMessageListResp.Size(m)
+func (m *GetContactOperationListResp) XXX_Size() int {
+	return xxx_messageInfo_GetContactOperationListResp.Size(m)
 }
-func (m *GetContactOperationMessageListResp) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetContactOperationMessageListResp.DiscardUnknown(m)
+func (m *GetContactOperationListResp) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetContactOperationListResp.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_GetContactOperationMessageListResp proto.InternalMessageInfo
+var xxx_messageInfo_GetContactOperationListResp proto.InternalMessageInfo
 
-func (m *GetContactOperationMessageListResp) GetMessageList() []*ContactOperationMessage {
+func (m *GetContactOperationListResp) GetMessageList() []*ContactOperationMessage {
 	if m != nil {
 		return m.MessageList
 	}
@@ -557,42 +566,42 @@ func init() {
 	proto.RegisterType((*DeleteContactResp)(nil), "com.salty.protos.DeleteContactResp")
 	proto.RegisterType((*UpdateRemarkInfoReq)(nil), "com.salty.protos.UpdateRemarkInfoReq")
 	proto.RegisterType((*UpdateRemarkInfoResp)(nil), "com.salty.protos.UpdateRemarkInfoResp")
-	proto.RegisterType((*GetContactsReq)(nil), "com.salty.protos.GetContactsReq")
-	proto.RegisterType((*GetContactsResp)(nil), "com.salty.protos.GetContactsResp")
-	proto.RegisterType((*GetContactOperationMessageListReq)(nil), "com.salty.protos.GetContactOperationMessageListReq")
-	proto.RegisterType((*GetContactOperationMessageListResp)(nil), "com.salty.protos.GetContactOperationMessageListResp")
+	proto.RegisterType((*GetContactListReq)(nil), "com.salty.protos.GetContactListReq")
+	proto.RegisterType((*GetContactListResp)(nil), "com.salty.protos.GetContactListResp")
+	proto.RegisterType((*GetContactOperationListReq)(nil), "com.salty.protos.GetContactOperationListReq")
+	proto.RegisterType((*GetContactOperationListResp)(nil), "com.salty.protos.GetContactOperationListResp")
 }
 
 func init() { proto.RegisterFile("ContactService.proto", fileDescriptor_2aa1a4d6536f54ce) }
 
 var fileDescriptor_2aa1a4d6536f54ce = []byte{
-	// 403 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xa4, 0x93, 0x41, 0xcf, 0xd2, 0x40,
-	0x10, 0x86, 0xed, 0x87, 0x21, 0x3a, 0xd5, 0x5a, 0x0a, 0x21, 0xc8, 0x41, 0x71, 0x0f, 0x06, 0x3d,
-	0xf4, 0x80, 0x57, 0x13, 0xa3, 0x18, 0x91, 0xa0, 0x81, 0xac, 0x7a, 0xf0, 0xb8, 0x96, 0xc1, 0x34,
-	0xd2, 0xee, 0x76, 0x67, 0x31, 0xfa, 0x97, 0xfc, 0x95, 0x86, 0xb6, 0x40, 0x5b, 0x02, 0x1f, 0x29,
-	0xc7, 0x79, 0x3b, 0xf3, 0xcc, 0xcc, 0xce, 0x5b, 0xe8, 0x8c, 0x65, 0x6c, 0x44, 0x60, 0xbe, 0xa0,
-	0xfe, 0x1d, 0x06, 0xe8, 0x2b, 0x2d, 0x8d, 0xf4, 0xdc, 0x40, 0x46, 0x3e, 0x89, 0xb5, 0xf9, 0x9b,
-	0x09, 0xd4, 0x7f, 0x80, 0xb1, 0x09, 0x77, 0x21, 0x1b, 0x43, 0x8b, 0x63, 0xb2, 0x41, 0x32, 0x79,
-	0x39, 0xc7, 0xc4, 0xeb, 0x42, 0x73, 0x43, 0xa8, 0xa7, 0xcb, 0x9e, 0x35, 0xb0, 0x86, 0xf7, 0x79,
-	0x1e, 0x6d, 0x75, 0x8d, 0x82, 0x64, 0xdc, 0xbb, 0xc9, 0xf4, 0x2c, 0x62, 0x1d, 0xf0, 0xaa, 0x10,
-	0x52, 0x19, 0x7a, 0xb5, 0x21, 0x5c, 0x5e, 0x8b, 0x2e, 0x43, 0x48, 0xb1, 0x97, 0xe0, 0xbe, 0x0d,
-	0x02, 0x54, 0x17, 0x0c, 0xcd, 0xda, 0xd0, 0xaa, 0xe4, 0x66, 0x80, 0xf7, 0xb8, 0x46, 0x83, 0x97,
-	0x01, 0x2a, 0xb9, 0xa4, 0x58, 0x0c, 0xed, 0x6f, 0x6a, 0x29, 0x0c, 0x72, 0x8c, 0x84, 0xfe, 0x35,
-	0x8d, 0x57, 0xf2, 0xdc, 0x7a, 0x6f, 0x00, 0xf4, 0x3e, 0x31, 0x5d, 0xd1, 0x1e, 0x3d, 0xf5, 0xab,
-	0xb7, 0xf1, 0xf7, 0x1d, 0xb6, 0xa9, 0xbc, 0x50, 0xc2, 0xba, 0xd0, 0x39, 0xee, 0x47, 0x8a, 0xb9,
-	0xe0, 0x4c, 0x70, 0xb7, 0x1a, 0x71, 0x4c, 0xd8, 0x1c, 0x1e, 0x95, 0x14, 0x52, 0xde, 0x6b, 0xb8,
-	0x17, 0xe4, 0x71, 0xcf, 0x1a, 0x34, 0x86, 0xf6, 0x68, 0x70, 0xb2, 0xf7, 0x42, 0xcb, 0x55, 0xb8,
-	0x46, 0xbe, 0xaf, 0x60, 0x33, 0x78, 0x76, 0x00, 0xce, 0x15, 0x6a, 0x61, 0x42, 0x19, 0x7f, 0x46,
-	0x22, 0xf1, 0x13, 0x3f, 0x85, 0x94, 0x3e, 0xde, 0x73, 0x70, 0x22, 0xf1, 0x27, 0x17, 0xbf, 0x86,
-	0x11, 0xa6, 0x0f, 0xd0, 0xe0, 0x15, 0x95, 0x25, 0xc0, 0x6e, 0x83, 0x91, 0xf2, 0x66, 0x60, 0x47,
-	0x07, 0x29, 0x9f, 0xf9, 0xc5, 0xc9, 0x99, 0xab, 0x1c, 0x5e, 0xac, 0x1e, 0xfd, 0xbb, 0x0b, 0x4e,
-	0xf9, 0xdf, 0xf0, 0xa6, 0xe0, 0x94, 0x0d, 0xeb, 0x3d, 0x3e, 0x86, 0x4f, 0xb4, 0x0a, 0x38, 0x26,
-	0xfd, 0xfe, 0xa9, 0x4f, 0xa4, 0xd8, 0x9d, 0x0c, 0x55, 0x34, 0x68, 0x7d, 0xd4, 0x47, 0x78, 0x58,
-	0x72, 0xea, 0x55, 0xa4, 0x92, 0x65, 0xeb, 0x93, 0xbe, 0xc3, 0x93, 0xf3, 0xf7, 0xaa, 0x8f, 0x9e,
-	0x81, 0x5b, 0xb5, 0x74, 0x7d, 0xd8, 0x07, 0xb0, 0x0b, 0xae, 0xaf, 0xcd, 0x79, 0x77, 0xb3, 0xb0,
-	0x7e, 0x34, 0x53, 0xf9, 0xd5, 0xff, 0x00, 0x00, 0x00, 0xff, 0xff, 0x5a, 0x3a, 0x7e, 0x2d, 0x52,
-	0x05, 0x00, 0x00,
+	// 416 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xa4, 0x93, 0xc1, 0x8e, 0xd3, 0x30,
+	0x10, 0x86, 0x49, 0x17, 0xad, 0x60, 0xc2, 0xae, 0xba, 0xde, 0x6a, 0x29, 0xe1, 0x40, 0x64, 0x71,
+	0x58, 0x38, 0xe4, 0x50, 0xae, 0x48, 0x08, 0x76, 0xa5, 0xa5, 0x2a, 0x88, 0xca, 0xc0, 0x03, 0x98,
+	0x64, 0x8a, 0x02, 0x4d, 0xec, 0x7a, 0x5c, 0x24, 0x5e, 0x88, 0xe7, 0x44, 0x89, 0xd3, 0x90, 0xa4,
+	0x0a, 0xaa, 0xd2, 0xa3, 0xff, 0xfc, 0xf3, 0xcd, 0xfc, 0xf1, 0x18, 0x26, 0x37, 0x2a, 0xb7, 0x32,
+	0xb6, 0x9f, 0xd1, 0xfc, 0x4a, 0x63, 0x8c, 0xb4, 0x51, 0x56, 0xb1, 0x71, 0xac, 0xb2, 0x88, 0xe4,
+	0xda, 0xfe, 0x76, 0x02, 0x05, 0x8f, 0x30, 0xb7, 0xe9, 0xee, 0xc8, 0x6f, 0xe0, 0x42, 0xe0, 0x66,
+	0x8b, 0x64, 0xab, 0x72, 0x81, 0x1b, 0x76, 0x05, 0xa7, 0x5b, 0x42, 0x33, 0x4f, 0xa6, 0x5e, 0xe8,
+	0x5d, 0x3f, 0x14, 0xd5, 0xa9, 0xd0, 0x0d, 0x4a, 0x52, 0xf9, 0x74, 0xe4, 0x74, 0x77, 0xe2, 0x13,
+	0x60, 0x5d, 0x08, 0x69, 0x87, 0x5e, 0x6d, 0x09, 0x93, 0x63, 0xd1, 0x6d, 0x08, 0x69, 0xfe, 0x12,
+	0xc6, 0x6f, 0xe3, 0x18, 0xf5, 0x01, 0x43, 0xf3, 0x4b, 0xb8, 0xe8, 0x78, 0x1d, 0xe0, 0x16, 0xd7,
+	0x68, 0xf1, 0x30, 0x40, 0xc7, 0x4b, 0x9a, 0xe7, 0x70, 0xf9, 0x55, 0x27, 0xd2, 0xa2, 0xc0, 0x4c,
+	0x9a, 0x9f, 0xf3, 0x7c, 0xa5, 0xfe, 0x17, 0xef, 0x0d, 0x80, 0xa9, 0x8d, 0x65, 0x44, 0x7f, 0xf6,
+	0x2c, 0xea, 0xde, 0x4d, 0x54, 0x77, 0x28, 0xac, 0xa2, 0x51, 0xc2, 0xaf, 0x60, 0xb2, 0xdf, 0x8f,
+	0x74, 0x31, 0xdc, 0x1d, 0xee, 0xa2, 0x7d, 0x48, 0xa9, 0x48, 0xc2, 0x05, 0xb0, 0xae, 0x48, 0x9a,
+	0xbd, 0x86, 0x07, 0xb1, 0x93, 0x68, 0xea, 0x85, 0x27, 0xd7, 0xfe, 0x2c, 0xec, 0x9d, 0x60, 0x69,
+	0xd4, 0x2a, 0x5d, 0xa3, 0xa8, 0x2b, 0x78, 0x02, 0xc1, 0x3f, 0xe6, 0x27, 0x8d, 0x46, 0xda, 0x54,
+	0xe5, 0x55, 0x47, 0xf6, 0x1c, 0xce, 0xc8, 0x4a, 0x63, 0x6f, 0xa5, 0xc5, 0x2f, 0x69, 0x86, 0x65,
+	0xfc, 0x13, 0xd1, 0x16, 0x59, 0x08, 0x3e, 0xe6, 0x49, 0xed, 0x19, 0x95, 0x9e, 0xa6, 0xc4, 0x7f,
+	0xc0, 0xd3, 0xde, 0x2e, 0xa4, 0xd9, 0x02, 0xfc, 0x0c, 0x89, 0xe4, 0x77, 0x2c, 0xa4, 0x2a, 0xc5,
+	0x8b, 0xde, 0x14, 0x35, 0xe0, 0xa3, 0x2b, 0x12, 0xcd, 0xea, 0xd9, 0x9f, 0xfb, 0x70, 0xde, 0x7e,
+	0x33, 0x6c, 0x0e, 0xe7, 0xed, 0x45, 0x66, 0x4f, 0xf6, 0xe1, 0x77, 0x46, 0xc7, 0x02, 0x37, 0x41,
+	0xd0, 0xf7, 0x89, 0x34, 0xbf, 0xe7, 0x50, 0xcd, 0xc5, 0x1d, 0x8e, 0x7a, 0x0f, 0x67, 0xad, 0x0d,
+	0x3e, 0x8a, 0xd4, 0x5a, 0xe5, 0xe1, 0x24, 0x01, 0x8f, 0x7b, 0x2e, 0x6a, 0x38, 0x73, 0x01, 0xe3,
+	0xee, 0x8e, 0x1f, 0xf5, 0xff, 0xdb, 0x6f, 0x60, 0x30, 0xea, 0xdd, 0x68, 0xe9, 0x7d, 0x3b, 0x2d,
+	0xe5, 0x57, 0x7f, 0x03, 0x00, 0x00, 0xff, 0xff, 0x65, 0x7f, 0xa3, 0x9f, 0x66, 0x05, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -616,11 +625,11 @@ type ContactServiceClient interface {
 	//删除好友
 	DeleteContact(ctx context.Context, in *GrpcReq, opts ...grpc.CallOption) (*GrpcResp, error)
 	//获取执行时间内的联系操作列表
-	GetContactOperationMessageList(ctx context.Context, in *GrpcReq, opts ...grpc.CallOption) (*GrpcResp, error)
+	GetContactOperationList(ctx context.Context, in *GrpcReq, opts ...grpc.CallOption) (*GrpcResp, error)
 	//更新好友备注信息
 	UpdateRemarkInfo(ctx context.Context, in *GrpcReq, opts ...grpc.CallOption) (*GrpcResp, error)
 	//获取联系人列表
-	GetContacts(ctx context.Context, in *GrpcReq, opts ...grpc.CallOption) (*GrpcResp, error)
+	GetContactList(ctx context.Context, in *GrpcReq, opts ...grpc.CallOption) (*GrpcResp, error)
 }
 
 type contactServiceClient struct {
@@ -667,9 +676,9 @@ func (c *contactServiceClient) DeleteContact(ctx context.Context, in *GrpcReq, o
 	return out, nil
 }
 
-func (c *contactServiceClient) GetContactOperationMessageList(ctx context.Context, in *GrpcReq, opts ...grpc.CallOption) (*GrpcResp, error) {
+func (c *contactServiceClient) GetContactOperationList(ctx context.Context, in *GrpcReq, opts ...grpc.CallOption) (*GrpcResp, error) {
 	out := new(GrpcResp)
-	err := c.cc.Invoke(ctx, "/com.salty.protos.ContactService/GetContactOperationMessageList", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/com.salty.protos.ContactService/GetContactOperationList", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -685,9 +694,9 @@ func (c *contactServiceClient) UpdateRemarkInfo(ctx context.Context, in *GrpcReq
 	return out, nil
 }
 
-func (c *contactServiceClient) GetContacts(ctx context.Context, in *GrpcReq, opts ...grpc.CallOption) (*GrpcResp, error) {
+func (c *contactServiceClient) GetContactList(ctx context.Context, in *GrpcReq, opts ...grpc.CallOption) (*GrpcResp, error) {
 	out := new(GrpcResp)
-	err := c.cc.Invoke(ctx, "/com.salty.protos.ContactService/GetContacts", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/com.salty.protos.ContactService/GetContactList", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -705,11 +714,11 @@ type ContactServiceServer interface {
 	//删除好友
 	DeleteContact(context.Context, *GrpcReq) (*GrpcResp, error)
 	//获取执行时间内的联系操作列表
-	GetContactOperationMessageList(context.Context, *GrpcReq) (*GrpcResp, error)
+	GetContactOperationList(context.Context, *GrpcReq) (*GrpcResp, error)
 	//更新好友备注信息
 	UpdateRemarkInfo(context.Context, *GrpcReq) (*GrpcResp, error)
 	//获取联系人列表
-	GetContacts(context.Context, *GrpcReq) (*GrpcResp, error)
+	GetContactList(context.Context, *GrpcReq) (*GrpcResp, error)
 }
 
 // UnimplementedContactServiceServer can be embedded to have forward compatible implementations.
@@ -728,14 +737,14 @@ func (*UnimplementedContactServiceServer) AcceptContact(ctx context.Context, req
 func (*UnimplementedContactServiceServer) DeleteContact(ctx context.Context, req *GrpcReq) (*GrpcResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteContact not implemented")
 }
-func (*UnimplementedContactServiceServer) GetContactOperationMessageList(ctx context.Context, req *GrpcReq) (*GrpcResp, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetContactOperationMessageList not implemented")
+func (*UnimplementedContactServiceServer) GetContactOperationList(ctx context.Context, req *GrpcReq) (*GrpcResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetContactOperationList not implemented")
 }
 func (*UnimplementedContactServiceServer) UpdateRemarkInfo(ctx context.Context, req *GrpcReq) (*GrpcResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateRemarkInfo not implemented")
 }
-func (*UnimplementedContactServiceServer) GetContacts(ctx context.Context, req *GrpcReq) (*GrpcResp, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetContacts not implemented")
+func (*UnimplementedContactServiceServer) GetContactList(ctx context.Context, req *GrpcReq) (*GrpcResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetContactList not implemented")
 }
 
 func RegisterContactServiceServer(s *grpc.Server, srv ContactServiceServer) {
@@ -814,20 +823,20 @@ func _ContactService_DeleteContact_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ContactService_GetContactOperationMessageList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _ContactService_GetContactOperationList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GrpcReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ContactServiceServer).GetContactOperationMessageList(ctx, in)
+		return srv.(ContactServiceServer).GetContactOperationList(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/com.salty.protos.ContactService/GetContactOperationMessageList",
+		FullMethod: "/com.salty.protos.ContactService/GetContactOperationList",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ContactServiceServer).GetContactOperationMessageList(ctx, req.(*GrpcReq))
+		return srv.(ContactServiceServer).GetContactOperationList(ctx, req.(*GrpcReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -850,20 +859,20 @@ func _ContactService_UpdateRemarkInfo_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ContactService_GetContacts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _ContactService_GetContactList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GrpcReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ContactServiceServer).GetContacts(ctx, in)
+		return srv.(ContactServiceServer).GetContactList(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/com.salty.protos.ContactService/GetContacts",
+		FullMethod: "/com.salty.protos.ContactService/GetContactList",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ContactServiceServer).GetContacts(ctx, req.(*GrpcReq))
+		return srv.(ContactServiceServer).GetContactList(ctx, req.(*GrpcReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -889,16 +898,16 @@ var _ContactService_serviceDesc = grpc.ServiceDesc{
 			Handler:    _ContactService_DeleteContact_Handler,
 		},
 		{
-			MethodName: "GetContactOperationMessageList",
-			Handler:    _ContactService_GetContactOperationMessageList_Handler,
+			MethodName: "GetContactOperationList",
+			Handler:    _ContactService_GetContactOperationList_Handler,
 		},
 		{
 			MethodName: "UpdateRemarkInfo",
 			Handler:    _ContactService_UpdateRemarkInfo_Handler,
 		},
 		{
-			MethodName: "GetContacts",
-			Handler:    _ContactService_GetContacts_Handler,
+			MethodName: "GetContactList",
+			Handler:    _ContactService_GetContactList_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
