@@ -90,10 +90,10 @@ message GetContactListReq {
 }
 
 message GetContactListResp {
-    repeated ContactProfile contacts = 1;
+    repeated ContactProfile contactList = 1;
 }
 
-// 查询时间范围内的所有消息
+// 查询时间范围内的消息
 message GetContactOperationListReq {
     int64 startDateTime = 1;
     int64 endDateTime = 2;
