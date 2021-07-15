@@ -14,31 +14,31 @@ option java_multiple_files = true;
 // user service
 service ContactService {
     //请求添加好友
-    rpc RequestContact (GrpcReq) returns (GrpcResp) {
+    rpc RequestContact (RequestContactReq) returns (RequestContactResp) {
     }
 
     //拒绝添加好友，同时可以输入拒绝的原因
-    rpc RefusedContact (GrpcReq) returns (GrpcResp) {
+    rpc RefusedContact (RefusedContactReq) returns (RefusedContactResp) {
     }
 
     //同意添加
-    rpc AcceptContact (GrpcReq) returns (GrpcResp) {
+    rpc AcceptContact (AcceptContactReq) returns (AcceptContactResp) {
     }
 
     //删除好友
-    rpc DeleteContact (GrpcReq) returns (GrpcResp) {
+    rpc DeleteContact (DeleteContactReq) returns (DeleteContactResp) {
     }
 
     //获取执行时间内的联系操作列表
-    rpc GetContactOperationList (GrpcReq) returns (GrpcResp) {
+    rpc GetContactOperationList (GetContactOperationListReq) returns (GetContactOperationListResp) {
     }
 
     //更新好友备注信息
-    rpc UpdateRemarkInfo (GrpcReq) returns (GrpcResp) {
+    rpc UpdateRemarkInfo (UpdateRemarkInfoReq) returns (UpdateRemarkInfoResp) {
     }
 
     //获取联系人列表
-    rpc GetContactList (GrpcReq) returns (GrpcResp) {
+    rpc GetContactList (GetContactListReq) returns (GetContactListResp) {
     }
 }
 

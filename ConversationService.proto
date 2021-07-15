@@ -14,31 +14,31 @@ option java_multiple_files = true;
 // user service
 service ConversationService {
     //获取所有会话
-    rpc GetAllConversation (GrpcReq) returns (GrpcResp) {
+    rpc GetAllConversation (GetAllConversationReq) returns (GetAllConversationResp) {
     }
 
     //获取某一个会话
-    rpc GetConversationDetail (GrpcReq) returns (GrpcResp) {
+    rpc GetConversationDetail (GetConversationDetailReq) returns (GetConversationDetailResp) {
     }
 
     //删除会话
-    rpc RemoveConversation (GrpcReq) returns (GrpcResp) {
+    rpc RemoveConversation (RemoveConversationReq) returns (RemoveConversationResp) {
     }
 
     //清空会话消息(清空该会话的聊天记录)
-    rpc ClearConversationMessage (GrpcReq) returns (GrpcResp) {
+    rpc ClearConversationMessage (ClearConversationMessageReq) returns (ClearConversationMessageResp) {
     }
 
     //更新会话标题
-    rpc UpdateConversationTitle (GrpcReq) returns (GrpcResp) {
+    rpc UpdateConversationTitle (UpdateConversationTitleReq) returns (UpdateConversationTitleResp) {
     }
 
     //更新会话置顶状态
-    rpc UpdateConversationTop (GrpcReq) returns (GrpcResp) {
+    rpc UpdateConversationTop (UpdateConversationTopReq) returns (UpdateConversationTopResp) {
     }
 
     //更新会话提醒状态
-    rpc UpdateNotificationStatus (GrpcReq) returns (GrpcResp) {
+    rpc UpdateNotificationStatus (UpdateNotificationStatusReq) returns (UpdateNotificationStatusResp) {
     }
 }
 
