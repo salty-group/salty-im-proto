@@ -65,7 +65,7 @@ message AcceptContactReq {
 }
 
 message AcceptContactResp {
-
+    ContactProfile profile = 1;
 }
 
 message DeleteContactReq {
@@ -82,7 +82,7 @@ message UpdateRemarkInfoReq {
 }
 
 message UpdateRemarkInfoResp {
-
+    ContactProfile profile = 1;
 }
 
 message GetContactListReq {
