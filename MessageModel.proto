@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package com.salty.protos;
+
+import "CommonModel.proto";
+
+option java_multiple_files = true;
+
+message MessageCommon {
+  string messageId = 1; //消息ID
+  string senderId = 2; //消息发送者的Id，可能是userId或者groupId等等的可能
+  string recipientId = 3; //消息接收者的Id，可能是userId或者groupId等等的可能
+  string sortId = 4; //排序ID，用来排序，递增或者递减，消息的顺序基于它
+  int64 createdTime = 5; //push消息创建的时间
+  int64 readTime = 6; //消息的已读时间，如果未读，应该默认值为-1
+  bool isNeedRemind = 7; //是否需要提醒用户，true的时候，收到消息会有通知栏推送
+  MessageType messageType = 8; //消息类型
+  ReceivedStatus receivedStatus = 9; //消息接收状态
+
+  //消息类型
+  enum MessageType {
+    UNKNOWN = 0; //未知的，默认值类型
+    CHAT_PRIVATE = 1; //私聊信息
+    CHAT_GROUP = 2; //群组信息
+    CONTACT_OPERATION = 3; //联系人操作信息
+  }
+
+  //消息接收状态
+  enum ReceivedStatus {
+    RECEIVED = 0; //消息已接收
+    READ = 1; //消息已读
+  }
+}
+
+message ChatMessage {
+  MessageCommon common = 1;
+  //消息的发送方向
+  enum MessageDirection {
+    SEND = 0; //发送
+    RECEIVE = 1; //接收
+  }
+}
+
+message ContactOperationMessage {
+  MessageCommon common = 1;//公共消息
+  string operationId = 2; //操作id，针对同一个的多次不同的操作，操作ID不变
+  UserProfile triggerProfile = 3;//触发这个消息的用户profile
+  string addReason = 4; //添加好友的理由
+  string rejectReason = 5;//删除好友的理由
+  OperationType type = 6;//操作类型
+
+  //操作类型
+  enum OperationType {
+    REQUEST = 0;//请求添加好友
+    ACCEPT = 1;//同意添加好友
+    REJECT = 2;//拒绝添加好友
+    DELETE = 3;//删除好友
+  }
+}

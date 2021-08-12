@@ -2,7 +2,8 @@ syntax = "proto3";
 
 package com.salty.protos;
 
-import "entity.proto";
+import "CommonModel.proto";
+import "MessageModel.proto";
 
 option java_multiple_files = true;
 
@@ -29,16 +30,20 @@ service ContactService {
     rpc DeleteContact (DeleteContactReq) returns (DeleteContactResp) {
     }
 
-    //获取执行时间内的联系操作列表
-    rpc GetContactOperationList (GetContactOperationListReq) returns (GetContactOperationListResp) {
-    }
-
     //更新好友备注信息
     rpc UpdateRemarkInfo (UpdateRemarkInfoReq) returns (UpdateRemarkInfoResp) {
     }
 
     //获取联系人列表
     rpc GetContactList (GetContactListReq) returns (GetContactListResp) {
+    }
+
+    //获取指定时间内的联系操作列表
+    rpc GetContactOperationList (GetContactOperationListReq) returns (GetContactOperationListResp) {
+    }
+
+    //删除联系人操作信息
+    rpc DeleteContactOperation (DeleteContactOperationReq) returns (DeleteContactOperationResp) {
     }
 }
 
@@ -103,3 +108,12 @@ message GetContactOperationListReq {
 message GetContactOperationListResp {
     repeated ContactOperationMessage messageList = 1;
 }
+
+message DeleteContactOperationReq {
+    string operationId = 1;
+}
+
+message DeleteContactOperationResp {
+
+}
+

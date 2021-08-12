@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package com.salty.protos;
+
+import "CommonModel.proto";
+import "MessageModel.proto";
+
+option java_multiple_files = true;
+
+message Conversation {
+  string conversationId = 1; //会话ID
+  string conversationTitle = 2; //会话标题
+  string portraitUrl = 3; //会话的头像
+  int32 unreadMessageCount = 4; //未读消息数量
+  bool isTop = 5; //是否会话置顶
+  ChatMessage latestMessage = 6; //会话最后一条信息，也就是最新的一条信息，会话列表要显示
+  string draft = 7; //输入草稿，没输入完就返回，保存输入信息，这个信息无需服务器保存，只存客户端
+  ConversationType conversationType = 8; //会话类型
+  NotificationStatus notificationStatus = 9; //会话状态
+
+  //会话类型
+  enum ConversationType {
+    NONE = 0; //无
+    PRIVATE = 1; //私聊
+    GROUP = 2; //群聊
+  }
+
+  //会话提醒状态
+  enum NotificationStatus {
+    NOTIFY = 0; //提醒
+    DO_NOT_DISTURB = 1; //免打扰
+  }
+}
