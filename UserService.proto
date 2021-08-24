@@ -14,32 +14,32 @@ option java_multiple_files = true;
 // user service
 service UserService {
     //注册，单纯的注册接口，注册后不会自动登录
-    rpc Register (RegisterReq) returns (RegisterResp) {
+    rpc Register (GrpcReq) returns (GrpcResp) {
     }
 
     //登录
-    rpc Login (LoginReq) returns (LoginResp) {
+    rpc Login (GrpcReq) returns (GrpcResp) {
     }
 
     //登出
-    rpc Logout (LogoutReq) returns (LogoutResp) {
+    rpc Logout (GrpcReq) returns (GrpcResp) {
     }
 
     //更新用户信息，目前不包含头像,更新头像的接口另外定义
-    rpc UpdateUserInfo (UpdateUserInfoReq) returns (UpdateUserInfoResp) {
+    rpc UpdateUserInfo (GrpcReq) returns (GrpcResp) {
 
     }
 
     //重置/找回密码，包含已登录和未登录状态下的重置/找回密码
-    rpc ResetPassword (ResetPasswordReq) returns (ResetPasswordResp) {
+    rpc ResetPassword (GrpcReq) returns (GrpcResp) {
     }
 
     //通过UserId获取用户信息,包括获取自己或者别人
-    rpc GetUserInfo (GetUserInfoReq) returns (GetUserInfoResp) {
+    rpc GetUserInfo (GrpcReq) returns (GrpcResp) {
     }
 
     //通过账号获取用户信息,包括获取自己或者别人
-    rpc QueryUserInfo (QueryUserInfoReq) returns (QueryUserInfoResp) {
+    rpc QueryUserInfo (GrpcReq) returns (GrpcResp) {
     }
 }
 

@@ -15,35 +15,35 @@ option java_multiple_files = true;
 // user service
 service ContactService {
     //请求添加好友
-    rpc RequestContact (RequestContactReq) returns (RequestContactResp) {
+    rpc RequestContact (GrpcReq) returns (GrpcResp) {
     }
 
     //拒绝添加好友，同时可以输入拒绝的原因
-    rpc RefusedContact (RefusedContactReq) returns (RefusedContactResp) {
+    rpc RefusedContact (GrpcReq) returns (GrpcResp) {
     }
 
     //同意添加
-    rpc AcceptContact (AcceptContactReq) returns (AcceptContactResp) {
+    rpc AcceptContact (GrpcReq) returns (GrpcResp) {
     }
 
     //删除好友
-    rpc DeleteContact (DeleteContactReq) returns (DeleteContactResp) {
+    rpc DeleteContact (GrpcReq) returns (GrpcResp) {
     }
 
     //更新好友备注信息
-    rpc UpdateRemarkInfo (UpdateRemarkInfoReq) returns (UpdateRemarkInfoResp) {
+    rpc UpdateRemarkInfo (GrpcReq) returns (GrpcResp) {
     }
 
     //获取联系人列表
-    rpc GetContactList (GetContactListReq) returns (GetContactListResp) {
+    rpc GetContactList (GrpcReq) returns (GrpcResp) {
     }
 
     //获取指定时间内的联系操作列表
-    rpc GetContactOperationList (GetContactOperationListReq) returns (GetContactOperationListResp) {
+    rpc GetContactOperationList (GrpcReq) returns (GrpcResp) {
     }
 
     //删除联系人操作信息
-    rpc DeleteContactOperation (DeleteContactOperationReq) returns (DeleteContactOperationResp) {
+    rpc DeleteContactOperation (GrpcReq) returns (GrpcResp) {
     }
 }
 

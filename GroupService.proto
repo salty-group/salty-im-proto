@@ -9,35 +9,35 @@ option java_multiple_files = true;
 
 service GroupService {
     //创建群组
-    rpc CreateGroup (CreateGroupReq) returns (CreateGroupResp) {
+    rpc CreateGroup (GrpcReq) returns (GrpcResp) {
     }
 
     //加入群组
-    rpc JoinGroup (JoinGroupReq) returns (JoinGroupResp) {
+    rpc JoinGroup (GrpcReq) returns (GrpcResp) {
     }
 
     //退出群组
-    rpc QuitGroup (QuitGroupReq) returns (QuitGroupResp) {
+    rpc QuitGroup (GrpcReq) returns (GrpcResp) {
     }
 
     //添加新的成员进群
-    rpc AddGroupMember (AddGroupMemberReq) returns (AddGroupMemberResp) {
+    rpc AddGroupMember (GrpcReq) returns (GrpcResp) {
     }
 
     //踢出群
-    rpc KickGroupMember (KickGroupMemberReq) returns (KickGroupMemberResp) {
+    rpc KickGroupMember (GrpcReq) returns (GrpcResp) {
     }
 
     //更新群组名字
-    rpc UpdateGroupName (UpdateGroupNameReq) returns (UpdateGroupNameResp) {
+    rpc UpdateGroupName (GrpcReq) returns (GrpcResp) {
     }
 
     //更新群公告
-    rpc UpdateGroupNotice (UpdateGroupNoticeReq) returns (UpdateGroupNoticeResp) {
+    rpc UpdateGroupNotice (GrpcReq) returns (GrpcResp) {
     }
 
     //更新我在群里面的群昵称
-    rpc UpdateMemberNickname (UpdateMemberNicknameReq) returns (UpdateMemberNicknameResp) {
+    rpc UpdateMemberNickname (GrpcReq) returns (GrpcResp) {
     }
 }
 
