@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package com.salty.protos;
+
+option java_multiple_files = true;
+
+message UserProfile {
+  string userId = 1;
+  string telephone = 2;
+  string email = 3;
+  string nickname = 4;
+  string avatar = 5;
+  string description = 6;
+  Sex sex = 7;
+  int64 birthday = 8;
+  string location = 9;
+
+  enum Sex {
+    NOT_SET = 0;
+    MALE = 1;
+    FEMALE = 2;
+  }
+}

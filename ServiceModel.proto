@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package com.salty.protos;
+
+import "google/protobuf/any.proto";
+import "StatusCode.proto";
+
+option java_multiple_files = true;
+
+// Basic Request
+message GrpcReq {
+  string deviceId = 1;
+  string version = 2;
+  Language language = 3;
+  OS os = 4;
+
+  string token = 5;
+
+  google.protobuf.Any data = 6;
+
+  enum Language {
+    CHINESE = 0;
+    ENGLISH = 1;
+  }
+
+  enum OS {
+    UNKNOWN = 0;
+    ANDROID = 1;
+    IOS = 2;
+    WINDOWS = 3;
+  }
+}
+
+// Basic Response
+message GrpcResp {
+  StatusCode code = 1;
+  string message = 2;
+  google.protobuf.Any data = 3;
+}
+
+
+message EmptyResp {
+}
