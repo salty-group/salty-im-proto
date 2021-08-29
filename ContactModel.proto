@@ -21,13 +21,13 @@ message ContactRemark {
   repeated string tags = 4;
 }
 
-message ContactOperationMessage {
-  MessageCommon common = 1;//公共消息
-  string operationId = 2; //操作id，针对同一个的多次不同的操作，操作ID不变
-  UserProfile triggerProfile = 3;//触发这个消息的用户profile
-  string addReason = 4; //添加好友的理由
-  string rejectReason = 5;//删除好友的理由
-  OperationType type = 6;//操作类型
+message ContactOperation {
+  string operationId = 1; // 消息ID
+  string recipientUserId = 2; //消息接收者的UserId
+  string operationReason = 3; //添加、拒绝好友的理由
+  int64 operationTime = 4; //消息创建的时间
+  UserProfile operatorProfile = 5; //操作者的profile
+  OperationType operationType = 6;//操作类型
 
   //操作类型
   enum OperationType {

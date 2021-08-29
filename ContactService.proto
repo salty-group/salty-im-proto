@@ -53,7 +53,7 @@ message RequestContactReq {
 }
 
 message RequestContactResp {
-    ContactOperationMessage contactOperation = 1;
+    ContactOperation contactOperation = 1;
 }
 
 message RefusedContactReq {
@@ -62,7 +62,7 @@ message RefusedContactReq {
 }
 
 message RefusedContactResp {
-    ContactOperationMessage contactOperation = 1;
+    ContactOperation contactOperation = 1;
 }
 
 message AcceptContactReq {
@@ -70,7 +70,7 @@ message AcceptContactReq {
 }
 
 message AcceptContactResp {
-    ContactOperationMessage contactOperation = 1;
+    ContactOperation contactOperation = 1;
     ContactProfile profile = 2;
 }
 
@@ -79,7 +79,7 @@ message DeleteContactReq {
 }
 
 message DeleteContactResp {
-    ContactOperationMessage contactOperation = 1;
+    ContactOperation contactOperation = 1;
 }
 
 message UpdateRemarkInfoReq {
@@ -106,7 +106,7 @@ message GetContactOperationListReq {
 }
 
 message GetContactOperationListResp {
-    repeated ContactOperationMessage messageList = 1;
+    repeated ContactOperation operationList = 1;
 }
 
 message DeleteContactOperationReq {
