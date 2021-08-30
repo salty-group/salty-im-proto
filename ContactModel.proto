@@ -28,6 +28,7 @@ message ContactOperation {
   int64 operationTime = 4; //消息创建的时间
   UserProfile operatorProfile = 5; //操作者的profile
   OperationType operationType = 6;//操作类型
+  OperationDirection operationDirection = 7; //操作方向
 
   //操作类型
   enum OperationType {
@@ -35,5 +36,11 @@ message ContactOperation {
     ACCEPT = 1;//同意添加好友
     REJECT = 2;//拒绝添加好友
     DELETE = 3;//删除好友
+  }
+
+  //操作方向，对于A Operation B ，对A来说是SEND，对于B是RECEIVE
+  enum OperationDirection {
+    SEND = 0; //发送
+    RECEIVE = 1; //接收
   }
 }
