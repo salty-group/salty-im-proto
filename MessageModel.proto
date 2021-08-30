@@ -12,11 +12,11 @@ message MessageCommon {
   int64 createdTime = 5; //push消息创建的时间
   int64 readTime = 6; //消息的已读时间，如果未读，应该默认值为-1
   bool isNeedRemind = 7; //是否需要提醒用户，true的时候，收到消息会有通知栏推送
-  MessageType messageType = 8; //消息类型
+  Type messageType = 8; //消息类型
   ReceivedStatus receivedStatus = 9; //消息接收状态
 
   //消息类型
-  enum MessageType {
+  enum Type {
     UNKNOWN = 0; //未知的，默认值类型
     CHAT_PRIVATE = 1; //私聊信息
     CHAT_GROUP = 2; //群组信息
