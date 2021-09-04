@@ -27,9 +27,9 @@ message ContactOperation {
   string reason = 3; //添加、拒绝好友的理由
   int64 createTime = 4; //本次操作创建时间
   Type type = 5;//操作类型
-  Direction Direction = 6; //操作方向
+  Direction direction = 6; //操作方向
   UserProfile senderProfile = 7; //发送者的profile
-  UserProfile recipientProfile = 8 //接收者的profile
+  UserProfile recipientProfile = 8; //接收者的profile
 
   //操作类型
   enum Type {
