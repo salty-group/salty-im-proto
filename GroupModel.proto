@@ -8,12 +8,11 @@ option java_multiple_files = true;
 
 message GroupProfile {
   string groupId = 1;
-  string name = 2;
+  string groupName = 2;
   int64 createTime = 3;
-  string ownerUserId = 4; //群组的UserId
-  string avatar = 5; //群头像
-  string notice = 6; //群公告
-  repeated GroupMemberProfile members = 7; //群成员，所有人，包含自己
+  string avatar = 4; //群头像
+  string notice = 5; //群公告
+  repeated GroupMemberProfile members = 6; //群成员，所有人，包含自己
 }
 
 message GroupMemberProfile {
@@ -21,7 +20,7 @@ message GroupMemberProfile {
   string alias = 2;
   GroupRole role = 3;
   int64 joinTime = 4;
-  UserProfile userProfile = 5;
+  UserProfile memberProfile = 5;
 
   enum GroupRole {
     NONE = 0;

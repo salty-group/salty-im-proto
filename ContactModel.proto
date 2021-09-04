@@ -22,13 +22,14 @@ message ContactRemark {
 }
 
 message ContactOperation {
-  string operationId = 1; // 消息ID
-  string recipientUserId = 2; //消息接收者的UserId
-  string operationReason = 3; //添加、拒绝好友的理由
-  int64 operationTime = 4; //消息创建的时间
-  UserProfile operatorProfile = 5; //操作者的profile
-  Type operationType = 6;//操作类型
-  Direction operationDirection = 7; //操作方向
+  string id = 1; // 操作ID
+  string groupId = 2; // 操作组ID，一个操作组可以包含多个操作
+  string reason = 3; //添加、拒绝好友的理由
+  int64 createTime = 4; //本次操作创建时间
+  Type type = 5;//操作类型
+  Direction Direction = 6; //操作方向
+  UserProfile senderProfile = 7; //发送者的profile
+  UserProfile recipientProfile = 8 //接收者的profile
 
   //操作类型
   enum Type {
