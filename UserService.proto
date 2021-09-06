@@ -27,20 +27,20 @@ service UserService {
     }
 
     //更新用户信息，目前不包含头像,更新头像的接口另外定义
-    rpc UpdateUserInfo (GrpcReq) returns (GrpcResp) {
+    rpc UpdateUserProfile (GrpcReq) returns (GrpcReq) {
 
     }
 
     //重置/找回密码，包含已登录和未登录状态下的重置/找回密码
-    rpc ResetPassword (GrpcReq) returns (GrpcResp) {
+    rpc ResetPassword (GrpcReq) returns (GrpcReq) {
     }
 
     //通过UserId获取用户信息,包括获取自己或者别人
-    rpc GetUserInfo (GrpcReq) returns (GrpcResp) {
+    rpc GetUserProfile (GrpcReq) returns (GrpcReq) {
     }
 
     //通过账号获取用户信息,包括获取自己或者别人
-    rpc QueryUserInfo (GrpcReq) returns (GrpcResp) {
+    rpc QueryUserProfile (GrpcReq) returns (GrpcReq) {
     }
 }
 
@@ -87,29 +87,29 @@ message ResetPasswordResp {
     bool isNeedReLogin = 1;
 }
 
-message UpdateUserInfoReq {
+message UpdateUserProfileReq {
     UserProfile profile = 1;
 }
 
-message UpdateUserInfoResp {
+message UpdateUserProfileResp {
 
 }
 
-message GetUserInfoReq {
+message GetUserProfileReq {
     string userId = 1;
 }
 
-message GetUserInfoResp {
+message GetUserProfileResp {
     UserProfile profile = 1;
 }
 
-message QueryUserInfoReq {
+message QueryUserProfileReq {
     oneof targetAccount {
         string telephone = 1;
         string email = 2;
     }
 }
 
-message QueryUserInfoResp {
+message QueryUserProfileResp {
     UserProfile profile = 1;
 }

@@ -35,15 +35,19 @@ service ContactService {
     }
 
     //获取联系人列表
-    rpc GetContactList (GrpcReq) returns (GrpcResp) {
+    rpc GetContacts (GrpcResp) returns (GrpcResp) {
     }
 
-    //获取指定时间内的联系操作列表
-    rpc GetContactOperationList (GrpcReq) returns (GrpcResp) {
+    //获取指定时间内的联系操作关系列表
+    rpc GetContactOperationRelations (GrpcResp) returns (GrpcResp) {
+    }
+
+    //获删除指定的联系人操作关系
+    rpc DeleteContactOperationRelations (GrpcResp) returns (GrpcResp) {
     }
 
     //删除联系人操作信息
-    rpc DeleteContactOperation (GrpcReq) returns (GrpcResp) {
+    rpc DeleteContactOperation (GrpcResp) returns (GrpcResp) {
     }
 }
 
@@ -91,26 +95,34 @@ message UpdateRemarkInfoResp {
     ContactProfile profile = 1;
 }
 
-message GetContactListReq {
+message GetContactsReq {
 
 }
 
-message GetContactListResp {
-    repeated ContactProfile contactList = 1;
+message GetContactsResp {
+    repeated ContactProfile contacts = 1;
 }
 
-// 查询时间范围内的消息
-message GetContactOperationListReq {
+message GetContactOperationRelationsReq {
     int64 startDateTime = 1;
     int64 endDateTime = 2;
 }
 
-message GetContactOperationListResp {
-    repeated ContactOperation operationList = 1;
+message GetContactOperationRelationsResp {
+    repeated ContactOperationRelation relations = 1;
+}
+
+message DeleteContactOperationRelationsReq {
+    string relationId = 1;
+}
+
+message DeleteContactOperationRelationsResp {
+
 }
 
 message DeleteContactOperationReq {
-    string operationId = 1;
+    string relationId = 1;
+    string operationId = 2;
 }
 
 message DeleteContactOperationResp {

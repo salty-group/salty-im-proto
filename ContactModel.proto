@@ -21,9 +21,14 @@ message ContactRemark {
   repeated string tags = 4;
 }
 
+message ContactOperationRelation {
+  string relationId = 1;
+  repeated ContactOperation operations = 2;
+}
+
 message ContactOperation {
-  string id = 1; // 操作ID
-  string groupId = 2; // 操作组ID，一个操作组可以包含多个操作
+  string relationId = 1; // 关系ID，一个关系可以包含多个操作
+  string operationId = 2; // 操作ID
   string reason = 3; //添加、拒绝好友的理由
   int64 createTime = 4; //本次操作创建时间
   Type type = 5;//操作类型
