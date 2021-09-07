@@ -17,8 +17,9 @@ message ContactProfile {
 message ContactRemark {
   string remarkName = 1;
   string description = 2;
-  repeated string telephones = 3;
-  repeated string tags = 4;
+  int64 remarkUpdateTime = 3;
+  repeated string telephones = 4;
+  repeated string tags = 5;
 }
 
 message ContactOperationRelation {

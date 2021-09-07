@@ -14,6 +14,7 @@ message UserProfile {
   Sex sex = 7;
   int64 birthday = 8;
   string location = 9;
+  int64 profileUpdateTime = 10;
 
   enum Sex {
     NOT_SET = 0;

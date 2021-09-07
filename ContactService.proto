@@ -31,7 +31,7 @@ service ContactService {
     }
 
     //更新好友备注信息
-    rpc UpdateRemarkInfo (GrpcReq) returns (GrpcResp) {
+    rpc UpdateContactRemark (GrpcReq) returns (GrpcResp) {
     }
 
     //获取联系人列表
@@ -86,12 +86,12 @@ message DeleteContactResp {
     ContactOperationRelation relation = 1;
 }
 
-message UpdateRemarkInfoReq {
+message UpdateContactRemarkReq {
     string userId = 1;
     ContactRemark remarkInfo = 2;
 }
 
-message UpdateRemarkInfoResp {
+message UpdateContactRemarkResp {
     ContactProfile profile = 1;
 }
 
