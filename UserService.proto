@@ -27,20 +27,20 @@ service UserService {
     }
 
     //更新用户信息，目前不包含头像,更新头像的接口另外定义
-    rpc UpdateUserProfile (GrpcReq) returns (GrpcReq) {
+    rpc UpdateUserProfile (GrpcReq) returns (GrpcResp) {
 
     }
 
     //重置/找回密码，包含已登录和未登录状态下的重置/找回密码
-    rpc ResetPassword (GrpcReq) returns (GrpcReq) {
+    rpc ResetPassword (GrpcReq) returns (GrpcResp) {
     }
 
     //通过UserId获取用户信息,包括获取自己或者别人
-    rpc GetUserProfile (GrpcReq) returns (GrpcReq) {
+    rpc GetUserProfile (GrpcReq) returns (GrpcResp) {
     }
 
     //通过账号获取用户信息,包括获取自己或者别人
-    rpc QueryUserProfile (GrpcReq) returns (GrpcReq) {
+    rpc QueryUserProfile (GrpcReq) returns (GrpcResp) {
     }
 }
 

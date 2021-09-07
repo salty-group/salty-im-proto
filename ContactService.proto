@@ -35,19 +35,19 @@ service ContactService {
     }
 
     //获取联系人列表
-    rpc GetContacts (GrpcResp) returns (GrpcResp) {
+    rpc GetContacts (GrpcReq) returns (GrpcResp) {
     }
 
     //获取指定时间内的联系操作关系列表
-    rpc GetContactOperationRelations (GrpcResp) returns (GrpcResp) {
+    rpc GetContactOperationRelations (GrpcReq) returns (GrpcResp) {
     }
 
     //获删除指定的联系人操作关系
-    rpc DeleteContactOperationRelations (GrpcResp) returns (GrpcResp) {
+    rpc DeleteContactOperationRelations (GrpcReq) returns (GrpcResp) {
     }
 
     //删除联系人操作信息
-    rpc DeleteContactOperation (GrpcResp) returns (GrpcResp) {
+    rpc DeleteContactOperation (GrpcReq) returns (GrpcResp) {
     }
 }
 
