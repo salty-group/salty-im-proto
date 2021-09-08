@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package com.salty.protos;
+
+import "SearchModel.proto";
+
+option java_multiple_files = true;
+
+
+service SearchService {
+    //搜索
+    rpc Search (GrpcReq) returns (GrpcResp) {
+    }
+}
+
+message SearchReq {
+    string searchContent = 1;
+
+}
+
+message SearchResp {
+    repeated SearchResult searchResults = 1; //搜索结果
+}

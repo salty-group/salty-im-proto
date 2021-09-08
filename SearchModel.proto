@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.salty.protos;
+
+import "ContactModel.proto";
+import "UserModel.proto";
+
+option java_multiple_files = true;
+
+message SearchResult {
+
+  oneof result {
+    UserProfile userResult = 1;
+    ContactProfile contactResult = 2;
+    GroupProfile groupResult = 3;
+  }
+}
