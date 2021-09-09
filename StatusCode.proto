@@ -14,9 +14,9 @@ enum StatusCode {
     STATUS_BAD_REQUEST = 2; // 错误请求
     STATUS_INTERNAL_SERVER_ERROR = 3; // 服务器错误
     STATUS_NON_AUTHORITATIVE_INFO = 4; // 请求缺少验证信息
-    STATUS_UNAUTHORIZED = 5; // 请求验证未通过
-    STATUS_REPEAT_OPERATION = 6; // 重复请求、重复操作
-    STATUS_TOKEN_EXPIRED = 7; // TOKEN 过期
+    STATUS_TOKEN_UNAUTHORIZED = 5; // 请求验证未通过,token无效
+    STATUS_TOKEN_EXPIRED = 6; // TOKEN 过期
+    STATUS_REPEAT_OPERATION = 7; // 重复请求、重复操作
     STATUS_ABNORMAL_DEVICE_INFO = 8; // 设备信息异常
 
     STATUS_ACCOUNT_AUTHORIZED_REQUIRED = 16; // 账户需要安全验证
