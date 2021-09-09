@@ -9,10 +9,17 @@ import "GroupModel.proto";
 option java_multiple_files = true;
 
 message SearchResult {
-
+  SearchType resultType = 1; // 结果类型
   oneof result {
-    UserProfile userResult = 1;
-    ContactProfile contactResult = 2;
-    GroupProfile groupResult = 3;
+    UserProfile userResult = 2;
+    ContactProfile contactResult = 3;
+    GroupProfile groupResult = 4;
   }
+}
+
+enum SearchType{
+  ALL = 0; // 搜索全部可能性
+  USER = 1; // 只搜索用户
+  CONTACT = 2; // 只搜索联系人
+  GROUP = 3; // 只搜索群组
 }

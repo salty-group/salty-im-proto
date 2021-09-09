@@ -56,8 +56,8 @@ message RegisterResp {
 message LoginReq {
     string password = 1;
     oneof targetAccount {
-        string telephone = 3;
-        string email = 4;
+        string telephone = 2;
+        string email = 3;
     }
 }
 
@@ -77,8 +77,8 @@ message LogoutResp {
 message ResetPasswordReq {
     string newPassword = 1;
     oneof targetAccount {
-        string telephone = 4;
-        string email = 5;
+        string telephone = 2;
+        string email = 3;
     }
 }
 

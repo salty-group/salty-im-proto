@@ -15,7 +15,8 @@ service SearchService {
 }
 
 message SearchReq {
-    string searchContent = 1;
+    SearchType searchType = 1;
+    string searchContent = 2;
 
 }
 
