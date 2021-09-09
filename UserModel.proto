@@ -6,15 +6,16 @@ option java_multiple_files = true;
 
 message UserProfile {
   string userId = 1;
-  string telephone = 2;
-  string email = 3;
-  string nickname = 4;
-  string avatar = 5;
-  string description = 6;
-  Sex sex = 7;
-  int64 birthday = 8;
-  string location = 9;
-  int64 profileUpdateTime = 10;
+  string userNumber = 2;
+  string telephone = 3;
+  string email = 4;
+  string nickname = 5;
+  string avatar = 6;
+  string description = 7;
+  Sex sex = 8;
+  int64 birthday = 9;
+  string location = 10;
+  int64 profileUpdateTime = 11;
 
   enum Sex {
     NOT_SET = 0;
