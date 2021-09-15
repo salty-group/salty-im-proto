@@ -25,7 +25,9 @@ message ContactRemark {
 
 message ContactOperationRelation {
   string relationId = 1;
-  repeated ContactOperation operations = 2;
+  int64 createTime = 2;
+  int64 updateTime = 3;
+  repeated ContactOperation operations = 4;
 }
 
 message ContactOperation {
