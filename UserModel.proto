@@ -15,7 +15,8 @@ message UserProfile {
   Sex sex = 8;
   int64 birthday = 9;
   string location = 10;
-  int64 profileUpdateTime = 11;
+  int64 lastUpdateTime = 11;// 个人信息最后更新的时间
+  int64 createTime = 12; // 用户注册时间
 
   enum Sex {
     NOT_SET = 0;

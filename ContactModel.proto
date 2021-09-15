@@ -12,6 +12,7 @@ message ContactProfile {
   UserProfile userProfile = 1;
   ContactRemark remarkInfo = 2;
   string sortId = 3;
+  int64 acceptContactTime = 4; //成为联系人的时间
 }
 
 message ContactRemark {

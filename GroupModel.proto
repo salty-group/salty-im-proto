@@ -10,9 +10,9 @@ message GroupProfile {
   string groupId = 1;
   string groupNumber = 2;
   string groupName = 3;
-  int64 createTime = 4;
-  string avatar = 5; //群头像
-  string notice = 6; //群公告
+  string avatar = 4; //群头像
+  string notice = 5; //群公告
+  int64 createTime = 6;
   repeated GroupMemberProfile members = 7; //群成员，所有人，包含自己
 }
 
