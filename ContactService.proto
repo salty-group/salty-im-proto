@@ -92,7 +92,7 @@ message UpdateContactRemarkReq {
 }
 
 message UpdateContactRemarkResp {
-    ContactProfile profile = 1;
+    ContactProfile contact = 1;
 }
 
 message GetContactsReq {

@@ -11,11 +11,13 @@ message Conversation {
   string conversationTitle = 2; //会话标题
   string portraitUrl = 3; //会话的头像
   int32 unreadMessageCount = 4; //未读消息数量
-  bool isTop = 5; //是否会话置顶
-  ChatMessage latestMessage = 6; //会话最后一条信息，也就是最新的一条信息，会话列表要显示
-  string draft = 7; //输入草稿，没输入完就返回，保存输入信息，这个信息无需服务器保存，只存客户端
-  ConversationType conversationType = 8; //会话类型
-  NotificationStatus notificationStatus = 9; //会话状态
+  int64 createTime = 5;
+  int64 updateTime = 6;
+  bool isTop = 7; //是否会话置顶
+  string draft = 8; //输入草稿，没输入完就返回，保存输入信息，这个信息无需服务器保存，只存客户端
+  ConversationType conversationType = 9; //会话类型
+  NotificationStatus notificationStatus = 10; //会话状态
+  ChatMessage latestMessage = 11; //会话最后一条信息，也就是最新的一条信息，会话列表要显示
 
   //会话类型
   enum ConversationType {

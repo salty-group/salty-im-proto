@@ -12,31 +12,12 @@ option java_multiple_files = true;
  *
  * @author zhixingye , 2020年05月01日.
  */
-// user service
+
 service UserService {
-    //注册，单纯的注册接口，注册后不会自动登录
-    rpc Register (GrpcReq) returns (GrpcResp) {
-    }
-
-    //登录
-    rpc Login (GrpcReq) returns (GrpcResp) {
-    }
-
-    //登出
-    rpc Logout (GrpcReq) returns (GrpcResp) {
-    }
 
     //更新用户信息，目前不包含头像,更新头像的接口另外定义
     rpc UpdateUserProfile (GrpcReq) returns (GrpcResp) {
 
-    }
-
-    //重置/找回密码，包含已登录和未登录状态下的重置/找回密码
-    rpc ResetPassword (GrpcReq) returns (GrpcResp) {
-    }
-
-    //通过UserId获取用户信息,包括获取自己或者别人
-    rpc GetUserProfile (GrpcReq) returns (GrpcResp) {
     }
 
     //通过账号获取用户信息,包括获取自己或者别人
@@ -44,72 +25,23 @@ service UserService {
     }
 }
 
-message RegisterReq {
-    string password = 1;
-    UserProfile profile = 3;
-}
-
-message RegisterResp {
-    UserProfile profile = 1;
-}
-
-message LoginReq {
-    string password = 1;
-    oneof targetAccount {
-        string telephone = 2;
-        string email = 3;
-    }
-}
-
-message LoginResp {
-    string token = 1;
-    UserProfile profile = 2;
-}
-
-message LogoutReq {
-    bool isMandatoryLogout = 1; //是否强制登出，强制登出会把其他同时在线的客户端也登出
-}
-
-message LogoutResp {
-
-}
-
-message ResetPasswordReq {
-    string newPassword = 1;
-    oneof targetAccount {
-        string telephone = 2;
-        string email = 3;
-    }
-}
-
-message ResetPasswordResp {
-    //是否需要重新登录，有的场景下重置完密码后需要重新登录，先保留这个字段
-    bool isNeedReLogin = 1;
-}
-
 message UpdateUserProfileReq {
-    UserProfile profile = 1;
+    UserProfile user = 1;
 }
 
 message UpdateUserProfileResp {
-
+    UserProfile user = 1;
 }
 
-message GetUserProfileReq {
-    string userId = 1;
-}
-
-message GetUserProfileResp {
-    UserProfile profile = 1;
-}
 
 message QueryUserProfileReq {
     oneof targetAccount {
         string telephone = 1;
         string email = 2;
+        string userId = 3;
     }
 }
 
 message QueryUserProfileResp {
-    UserProfile profile = 1;
+    UserProfile user = 1;
 }

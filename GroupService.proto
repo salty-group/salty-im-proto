@@ -34,7 +34,7 @@ service GroupService {
     }
 
     //更新群组名字
-    rpc UpdateGroupName (GrpcReq) returns (GrpcResp) {
+    rpc UpdateGroupNickname (GrpcReq) returns (GrpcResp) {
     }
 
     //更新群公告
@@ -42,18 +42,18 @@ service GroupService {
     }
 
     //更新我在群里面的群昵称
-    rpc UpdateMemberNickname (GrpcReq) returns (GrpcResp) {
+    rpc UpdateGroupMemberNickname (GrpcReq) returns (GrpcResp) {
     }
 }
 
 
 message CreateGroupReq {
-    string groupName = 1;
-    repeated string memberUserIdArr = 2; //成员的userId列表，可以包含自己也可以不包含
+    string groupNickName = 1;
+    repeated string membersUserId = 2; //成员的userId列表，可以包含自己也可以不包含
 }
 
 message CreateGroupResp {
-    GroupProfile profile = 1;
+    GroupProfile group = 1;
 }
 
 message JoinGroupReq {
@@ -62,7 +62,7 @@ message JoinGroupReq {
 }
 
 message JoinGroupResp {
-    GroupProfile profile = 1; //加入成功后返回群信息
+    GroupProfile group = 1; //加入成功后返回群信息
 }
 
 message QuitGroupReq {
@@ -82,11 +82,11 @@ message GetGroupsResp {
 
 message AddGroupMemberReq {
     string groupId = 1;
-    repeated string memberUserIdArr = 2; //成员的userId列表
+    repeated string membersUserId = 2; //成员的userId列表
 }
 
 message AddGroupMemberResp {
-    GroupProfile profile = 1; //成功后返回群信息，目前先这么干，后期再看优化空间
+    GroupProfile group = 1; //成功后返回群信息，目前先这么干，后期再看优化空间
 }
 
 message KickGroupMemberReq {
@@ -95,16 +95,16 @@ message KickGroupMemberReq {
 }
 
 message KickGroupMemberResp {
-    GroupProfile profile = 1; //成功后返回群信息，目前先这么干，后期再看优化空间
+    GroupProfile group = 1; //成功后返回群信息，目前先这么干，后期再看优化空间
 }
 
-message UpdateGroupNameReq {
+message UpdateGroupNicknameReq {
     string groupId = 1;
-    string groupName = 2;
+    string nickname = 2;
 }
 
-message UpdateGroupNameResp {
-    GroupProfile profile = 1; //成功后返回群信息，目前先这么干，后期再看优化空间
+message UpdateGroupNicknameResp {
+    GroupProfile group = 1; //成功后返回群信息，目前先这么干，后期再看优化空间
 }
 
 message UpdateGroupNoticeReq {
@@ -113,14 +113,14 @@ message UpdateGroupNoticeReq {
 }
 
 message UpdateGroupNoticeResp {
-    GroupProfile profile = 1; //成功后返回群信息，目前先这么干，后期再看优化空间
+    GroupProfile group = 1; //成功后返回群信息，目前先这么干，后期再看优化空间
 }
 
-message UpdateMemberNicknameReq {
+message UpdateGroupMemberNicknameReq {
     string groupId = 1;
-    string memberNickname = 2;
+    string nickname = 2;
 }
 
-message UpdateMemberNicknameResp {
-    GroupProfile profile = 1; //成功后返回群信息，目前先这么干，后期再看优化空间
+message UpdateGroupMemberNicknameResp {
+    GroupProfile group = 1; //成功后返回群信息，目前先这么干，后期再看优化空间
 }

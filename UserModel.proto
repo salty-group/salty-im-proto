@@ -12,11 +12,11 @@ message UserProfile {
   string nickname = 5;
   string avatar = 6;
   string description = 7;
-  Sex sex = 8;
+  string location = 8;
   int64 birthday = 9;
-  string location = 10;
-  int64 lastUpdateTime = 11;// 个人信息最后更新的时间
-  int64 createTime = 12; // 用户注册时间
+  int64 updateTime = 10;// 个人信息最后更新的时间
+  int64 createTime = 11; // 用户注册时间
+  Sex sex = 12;
 
   enum Sex {
     NOT_SET = 0;

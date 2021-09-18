@@ -37,8 +37,8 @@ message ContactOperation {
   int64 createTime = 4; //本次操作创建时间
   Type type = 5;//操作类型
   Direction direction = 6; //操作方向
-  UserProfile senderProfile = 7; //发送者的profile
-  UserProfile recipientProfile = 8; //接收者的profile
+  UserProfile senderUser = 7; //发送者的profile
+  UserProfile recipientUser = 8; //接收者的profile
 
   //操作类型
   enum Type {

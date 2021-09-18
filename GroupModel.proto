@@ -9,19 +9,21 @@ option java_multiple_files = true;
 message GroupProfile {
   string groupId = 1;
   string groupNumber = 2;
-  string groupName = 3;
+  string nickname = 3;
   string avatar = 4; //群头像
   string notice = 5; //群公告
   int64 createTime = 6;
-  repeated GroupMemberProfile members = 7; //群成员，所有人，包含自己
+  int64 updateTime = 7;
+  repeated GroupMemberProfile members = 8; //群成员，所有人，包含自己
 }
 
 message GroupMemberProfile {
   string groupId = 1;
-  string alias = 2;
+  string nickname = 2;
   GroupRole role = 3;
   int64 joinTime = 4;
-  UserProfile memberProfile = 5;
+  int64 updateTime = 5;
+  UserProfile memberUser = 6;
 
   enum GroupRole {
     NONE = 0;
