@@ -9,7 +9,7 @@ option java_multiple_files = true;
 message GroupProfile {
   string groupId = 1;
   string groupNumber = 2;
-  string nickname = 3;
+  string groupName = 3;
   string avatar = 4; //群头像
   string notice = 5; //群公告
   int64 createTime = 6;
