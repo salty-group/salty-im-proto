@@ -22,7 +22,7 @@ service GroupService {
     }
 
     //获取所有群组
-    rpc GetGroups (GrpcReq) returns (GrpcReq) {
+    rpc GetGroups (GrpcReq) returns (GrpcResp) {
     }
 
     //添加新的成员进群
