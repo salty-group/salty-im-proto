@@ -10,39 +10,39 @@ option java_multiple_files = true;
 
 service GroupService {
     //创建群组
-    rpc CreateGroup (GrpcReq) returns (GrpcResp) {
+    rpc CreateGroup (CreateGroupReq) returns (CreateGroupResp) {
     }
 
     //加入群组
-    rpc JoinGroup (GrpcReq) returns (GrpcResp) {
+    rpc JoinGroup (JoinGroupReq) returns (JoinGroupResp) {
     }
 
     //退出群组
-    rpc QuitGroup (GrpcReq) returns (GrpcResp) {
+    rpc QuitGroup (QuitGroupReq) returns (QuitGroupResp) {
     }
 
     //获取所有群组
-    rpc GetGroups (GrpcReq) returns (GrpcReq) {
+    rpc GetGroups (GetGroupsReq) returns (GetGroupsResp) {
     }
 
     //添加新的成员进群
-    rpc AddGroupMember (GrpcReq) returns (GrpcResp) {
+    rpc AddGroupMember (AddGroupMemberReq) returns (AddGroupMemberResp) {
     }
 
     //踢出群
-    rpc KickGroupMember (GrpcReq) returns (GrpcResp) {
+    rpc KickGroupMember (KickGroupMemberReq) returns (KickGroupMemberResp) {
     }
 
     //更新群组名字
-    rpc UpdateGroupNickname (GrpcReq) returns (GrpcResp) {
+    rpc UpdateGroupNickname (UpdateGroupNicknameReq) returns (UpdateGroupNicknameResp) {
     }
 
     //更新群公告
-    rpc UpdateGroupNotice (GrpcReq) returns (GrpcResp) {
+    rpc UpdateGroupNotice (UpdateGroupNoticeReq) returns (UpdateGroupNoticeResp) {
     }
 
     //更新我在群里面的群昵称
-    rpc UpdateGroupMemberNickname (GrpcReq) returns (GrpcResp) {
+    rpc UpdateGroupMemberNickname (UpdateGroupMemberNicknameReq) returns (UpdateGroupMemberNicknameResp) {
     }
 }
 

@@ -15,19 +15,19 @@ option java_multiple_files = true;
 // user service
 service AccountService {
     //注册，单纯的注册接口，注册后不会自动登录
-    rpc Register (GrpcReq) returns (GrpcResp) {
+    rpc Register (RegisterReq) returns (RegisterResp) {
     }
 
     //登录
-    rpc Login (GrpcReq) returns (GrpcResp) {
+    rpc Login (LoginReq) returns (LoginResp) {
     }
 
     //登出
-    rpc Logout (GrpcReq) returns (GrpcResp) {
+    rpc Logout (LogoutReq) returns (LogoutResp) {
     }
 
     //重置/找回密码，包含已登录和未登录状态下的重置/找回密码
-    rpc ResetPassword (GrpcReq) returns (GrpcResp) {
+    rpc ResetPassword (ResetPasswordReq) returns (ResetPasswordResp) {
     }
 
 }

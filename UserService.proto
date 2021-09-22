@@ -16,12 +16,12 @@ option java_multiple_files = true;
 service UserService {
 
     //更新用户信息，目前不包含头像,更新头像的接口另外定义
-    rpc UpdateUserProfile (GrpcReq) returns (GrpcResp) {
+    rpc UpdateUserProfile (UpdateUserProfileReq) returns (UpdateUserProfileResp) {
 
     }
 
     //通过账号获取用户信息,包括获取自己或者别人
-    rpc QueryUserProfile (GrpcReq) returns (GrpcResp) {
+    rpc QueryUserProfile (QueryUserProfileReq) returns (QueryUserProfileResp) {
     }
 }
 

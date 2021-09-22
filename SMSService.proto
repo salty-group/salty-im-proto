@@ -10,11 +10,11 @@ option java_multiple_files = true;
 
 service SMSService {
     //获取验证码
-    rpc ObtainTelephoneSMSCode (GrpcReq) returns (GrpcResp) {
+    rpc ObtainTelephoneSMSCode (ObtainTelephoneSMSCodeReq) returns (ObtainTelephoneSMSCodeResp) {
     }
 
     //校验验证码
-    rpc VerifyTelephoneSMSCode (GrpcReq) returns (GrpcResp) {
+    rpc VerifyTelephoneSMSCode (VerifyTelephoneSMSCodeReq) returns (VerifyTelephoneSMSCodeResp) {
     }
 }
 

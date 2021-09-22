@@ -10,7 +10,7 @@ option java_multiple_files = true;
 
 service SearchService {
     //搜索
-    rpc Search (GrpcReq) returns (GrpcResp) {
+    rpc Search (SearchReq) returns (SearchResp) {
     }
 }
 
