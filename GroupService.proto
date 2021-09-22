@@ -100,7 +100,7 @@ message KickGroupMemberResp {
 
 message UpdateGroupNameReq {
     string groupId = 1;
-    string nickname = 2;
+    string name = 2;
 }
 
 message UpdateGroupNameResp {
