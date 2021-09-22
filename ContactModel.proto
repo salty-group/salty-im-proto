@@ -3,7 +3,6 @@ syntax = "proto3";
 package com.salty.protos;
 
 import "UserModel.proto";
-import "MessageModel.proto";
 
 option java_multiple_files = true;
 
