@@ -34,7 +34,7 @@ service GroupService {
     }
 
     //更新群组名字
-    rpc UpdateGroupNickname (GrpcReq) returns (GrpcResp) {
+    rpc UpdateGroupName (GrpcReq) returns (GrpcResp) {
     }
 
     //更新群公告
@@ -98,12 +98,12 @@ message KickGroupMemberResp {
     GroupProfile group = 1; //成功后返回群信息，目前先这么干，后期再看优化空间
 }
 
-message UpdateGroupNicknameReq {
+message UpdateGroupNameReq {
     string groupId = 1;
     string nickname = 2;
 }
 
-message UpdateGroupNicknameResp {
+message UpdateGroupNameResp {
     GroupProfile group = 1; //成功后返回群信息，目前先这么干，后期再看优化空间
 }
 
