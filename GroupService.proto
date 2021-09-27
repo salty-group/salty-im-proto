@@ -48,7 +48,7 @@ service GroupService {
 
 
 message CreateGroupReq {
-    string groupNickName = 1;
+    string groupName = 1;
     repeated string membersUserId = 2; //成员的userId列表，可以包含自己也可以不包含
 }
 
