@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package com.salty.protos;
 
-import "ServiceModel.proto";
+import "CommonModel.proto";
 import "UserModel.proto";
 
 option java_multiple_files = true;

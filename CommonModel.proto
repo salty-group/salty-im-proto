@@ -40,3 +40,30 @@ message GrpcResp {
 
 message EmptyResp {
 }
+
+message ReqHeader {
+  string token = 1;
+  string userId = 2;
+  string deviceId = 3;
+  string version = 4;
+  Language language = 5;
+  OS os = 6;
+  int64 requestId = 7;
+
+  enum Language {
+    CHINESE = 0;
+    ENGLISH = 1;
+  }
+
+  enum OS {
+    UNKNOWN = 0;
+    ANDROID = 1;
+    IOS = 2;
+    WINDOWS = 3;
+  }
+}
+
+message RespHeader {
+  StatusCode code = 1;
+  string message = 2;
+}
